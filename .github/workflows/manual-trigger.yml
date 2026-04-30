@@ -1,0 +1,17 @@
+name: Workflow A - Manual Trigger
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Enter your name"
+        required: true
+        default: "Mr/Ms. GitHub User"
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Log greeting message
+        run: echo "Hello, ${{ github.actor }}!"
